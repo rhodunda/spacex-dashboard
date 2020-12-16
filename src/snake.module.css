@@ -1,0 +1,6 @@
+.snake {
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    border: .25vmin solid black;
+}
