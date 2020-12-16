@@ -1,5 +1,6 @@
 .snake {
     background-color: blue;
+    position: absolute;
     width: 20px;
     height: 20px;
     border: .25vmin solid black;

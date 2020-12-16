@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styles from './snake.module.css'
 
-const snake = () => {
+class snake extends Component {
+    state = {
+        length: 0
+    }
+    render() {
     return (
 <div className={styles.snake}></div>
     )
+    }
 }
 
 
