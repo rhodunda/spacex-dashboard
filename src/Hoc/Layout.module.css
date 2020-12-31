@@ -3,7 +3,7 @@
     grid-template-rows: repeat(21, ifr);
     grid-template-columns: repeat(21, ifr);
     justify-content: center;
-    margin:auto;
+    margin: auto;
     width: 500px;
     height: 500px;
     background-color:olive;
