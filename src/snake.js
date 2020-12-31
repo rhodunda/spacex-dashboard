@@ -7,10 +7,10 @@ class snake extends Component {
         modifier: 5,
         head: [],
         position: {
-            top: 10,
-            left: 10
+            top: 15,
+            left: 150,
         },
-        currentDirection: "down "
+        currentDirection: "down"
     }
 
     componentDidMount() {
@@ -18,15 +18,36 @@ class snake extends Component {
 
             switch(event.keyCode) {
             case 37:
-                // styles.left = parseInt(styles.left) - this.state.modifier + 'px'
-                console.log('left')
-                console.log(styles.left)
+
+                let updatedLeft = this.state.position.left - this.state.modifier
+                let updatedL = {
+                    top: this.state.top,
+                    left: updatedLeft,
+                    Up: this.state.up,
+                    down: this.state.down
+                }
+                this.setState({position: updatedL})
+                
                 break;
+
             case 38:
-                console.log('up')
+                let updatedUp = this.state.position.up - this.state.modifier
+                let updatedU = {
+                    top: this.state.top,
+                    left: this.state.left,
+                    up: updatedUp,
+                    down: this.state.down
+                }
+                this.setState({position: updatedU})
                 break;
+
             case 39:
-                console.log('right')
+                let updatedRight = this.state.position.left + this.state.modifier
+                let updatedR = {
+                    top: this.state.top,
+                    left: updatedRight,
+                }
+                this.setState({position: updatedR})
                 break;
             case 40:
                 console.log('down')
