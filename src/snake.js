@@ -4,7 +4,7 @@ import styles from './snake.module.css'
 class snake extends Component {
     state = {
         length: 0,
-        modifier: 5,
+        modifier: 8,
         head: [],
         position: {
             top: 15,
@@ -23,20 +23,18 @@ class snake extends Component {
                 let updatedL = {
                     top: this.state.top,
                     left: updatedLeft,
-                    Up: this.state.up,
-                    down: this.state.down
+                    // Up: this.state.up,
+                    // down: this.state.down
                 }
                 this.setState({position: updatedL})
                 
                 break;
 
             case 38:
-                let updatedUp = this.state.position.up - this.state.modifier
+                let updatedUp = this.state.position.top - this.state.modifier
                 let updatedU = {
-                    top: this.state.top,
+                    top: updatedUp,
                     left: this.state.left,
-                    up: updatedUp,
-                    down: this.state.down
                 }
                 this.setState({position: updatedU})
                 break;
@@ -50,7 +48,12 @@ class snake extends Component {
                 this.setState({position: updatedR})
                 break;
             case 40:
-                console.log('down')
+                let updatedDown = this.state.position.top + this.state.modifier
+                let updatedD = {
+                    top: updatedDown ,
+                    left: this.state.left,
+                }
+                this.setState({position: updatedD})
                 break;
 
 
@@ -63,7 +66,7 @@ class snake extends Component {
 
         
     return (
-        <div className={styles.snake} style={{top : this.state.position.top}, {left : this.state.position.left}}></div>
+        <div className={styles.snake} style={{up : this.state.position.top}, {left : this.state.position.left}}></div>
     )
     }
 }
