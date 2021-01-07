@@ -34,8 +34,9 @@ class Grid extends Component {
     
 
         const gridItems = this.state.grid.map((grid) => {
-
-            return <div  key={`${grid.i, grid.j}`} className={styles.gridItem}/>
+                    let gridPos = (`${grid.i}, ${grid.j}`)
+                    console.log(JSON.stringify(gridPos))
+            return <div  key={JSON.stringify(gridPos)} className={styles.gridItem}/>
         })
         return(
 
