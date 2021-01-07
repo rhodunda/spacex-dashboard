@@ -31,16 +31,20 @@ class Grid extends Component {
 
 
     render() {
-
+    
 
         const gridItems = this.state.grid.map((grid) => {
-            return <div className={styles.gridItem}/>
+
+            return <div  key={`${grid.i, grid.j}`} className={styles.gridItem}/>
         })
         return(
 
             <div className={styles.snakeContainer}>
-                <div className={styles.grid}>{gridItems} 
-                <Snake/>
+                <div className={styles.grid}>
+                    {gridItems} 
+                <Snake
+                />
+                <Food/>
                 </div>
                 
             </div>

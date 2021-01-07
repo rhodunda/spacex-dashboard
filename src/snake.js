@@ -4,11 +4,11 @@ import styles from './snake.module.css'
 class snake extends Component {
     state = {
         length: 0,
-        modifier: 8,
+        modifier: 55,
         head: [],
         position: {
-            top: 15,
-            left: 150,
+            up: -10,
+            left: 160,
         },
         currentDirection: "down"
     }
@@ -21,7 +21,7 @@ class snake extends Component {
 
                 let updatedLeft = this.state.position.left - this.state.modifier
                 let updatedL = {
-                    top: this.state.top,
+                    up: this.state.up,
                     left: updatedLeft,
                     // Up: this.state.up,
                     // down: this.state.down
@@ -31,7 +31,7 @@ class snake extends Component {
                 break;
 
             case 38:
-                let updatedUp = this.state.position.top - this.state.modifier
+                let updatedUp = this.state.position.up - this.state.modifier
                 let updatedU = {
                     top: updatedUp,
                     left: this.state.left,
@@ -42,13 +42,13 @@ class snake extends Component {
             case 39:
                 let updatedRight = this.state.position.left + this.state.modifier
                 let updatedR = {
-                    top: this.state.top,
+                    top: this.state.up,
                     left: updatedRight,
                 }
                 this.setState({position: updatedR})
                 break;
             case 40:
-                let updatedDown = this.state.position.top + this.state.modifier
+                let updatedDown = this.state.position.up + this.state.modifier
                 let updatedD = {
                     top: updatedDown ,
                     left: this.state.left,
@@ -66,7 +66,7 @@ class snake extends Component {
 
         
     return (
-        <div className={styles.snake} style={{up : this.state.position.top}, {left : this.state.position.left}}></div>
+        <div className={styles.snake} style={{up : this.state.position.up}, {left : this.state.position.left}}></div>
     )
     }
 }
