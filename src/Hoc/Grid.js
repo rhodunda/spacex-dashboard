@@ -43,8 +43,7 @@ class Grid extends Component {
             <div className={styles.snakeContainer}>
                 <div className={styles.grid}>
                     {gridItems} 
-                <Snake
-                />
+                <Snake/>
                 <Food/>
                 </div>
                 

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Layout from './Hoc/Layout'
+import Layout from './Hoc/Grid'
 
 
 
